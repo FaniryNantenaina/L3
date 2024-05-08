@@ -1,0 +1,78 @@
+.lie{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 24px;
+}
+
+
+
+.bb{
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    border-radius: 5px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: none;
+    Line-height: 52px;
+    perspective: 230px;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0,0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+
+}
+
+.bb span{
+    background: rgb(0, 0, 0,);
+    background: linear-gradient(180deg, #3d9283 0%, rgb(175, 195, 156) 100%);
+
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all .3s;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.bb span:nth-child(1) {
+    box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+    transform: rotateX(90deg);
+    transform-origin: 50% 50% -20px;
+    
+    ;
+}
+.bb span:nth-child(2) {
+    transform: rotateX(0deg);
+    transform-origin: 50% 48% -26.7px;
+}
+.bb:hover span:nth-child(1){
+transform: rotateX(0deg);
+box-shadow:  inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+7px 7px 20px 0px rgba(0, 0, 0, .1),
+4px 4px 5px 0px rgba(0, 0, 0, .1);
+}
+
+.bb:hover span:nth-child(2){
+  transform: rotateX(-90deg);
+  color: transparent;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+  7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+  4px 4px 5px 0px rgba(0, 0, 0, .1);  
+}

@@ -1,0 +1,37 @@
+
+.one {
+  background-color: #e1ca96;
+}
+
+.two {
+  background-color: #aca885;
+}
+
+.three {
+  background-color: #918b76;
+}
+
+.four {
+  background-color: #626c66;
+}
+
+.five {
+  background-color: #434a42;
+}
+
+.btn {
+  display: none;
+  cursor: pointer;
+  position: fixed; 
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(to top, #3d9283 0%, rgb(175, 195, 156) 100%);
+  color: white;
+  border: none;
+}
+
+

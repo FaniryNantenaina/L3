@@ -1,0 +1,41 @@
+
+
+
+.sous{
+    display: flex;
+    flex-flow: column wrap;
+    z-index: 1000;
+}
+
+.sous li{
+    flex: 1 1 auto;
+    text-align: left;
+}
+
+
+@media screen and (min-width: 750px){
+ 
+   
+    nav input[type=checkbox]:checked + ul, nav ul{
+        display: flex;
+        flex-flow: row wrap;
+       
+    }
+    
+   
+    .sous{
+        display: none;
+        box-shadow: 0px 1px 2px #CCC;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+    }
+   
+    
+    .deroulant > a::after{
+        content:" ▼";
+        font-size: 12px;
+    }
+    
+}
+

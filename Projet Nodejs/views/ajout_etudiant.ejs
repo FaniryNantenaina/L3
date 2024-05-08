@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, unitial-scale=1.0">
+        <link rel="stylesheet" href="/assets/semantic/semantic.css">
+        <link rel="stylesheet" href="/assets/style.css">
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/semantic/semantic.js"></script>
+        <title>ONG ODEFI</title>
+    </head>
+
+    <body>
+
+
+        <style>
+            body{
+                background-color: whitesmoke;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family:'Times New Roman', Times, serif;
+            }
+          header{
+            
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content:space-between ;
+            transition: 0.6s;
+            padding: 10px 100px;
+            background-color:rgb(85, 151, 95);
+            opacity: 0.9;
+          }
+
+        
+          header ul {
+            
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          header ul li{
+          
+            position: relative;
+            list-style: none;
+          }
+          header ul li a{
+          position: relative;
+          margin: 0 15px;
+          text-decoration: none;
+        } 
+
+        
+          a{
+          color: aliceblue;
+           
+          }
+
+          h1{
+           text-align: center;
+            margin-top: 30px; 
+            padding-top: 20px; 
+            color: rgb(183, 222, 183);
+          }
+
+          .main-content {
+            margin-top: 20px;
+           box-shadow: 0 0 20px rgb(183, 222, 183);
+          }
+
+          @media screen and (max-width: 1300px){
+    .main-content {
+margin-left: -220px;
+width: 450px;
+    }
+    }
+
+        
+        </style>
+        <!--- top nav --->
+
+        <!--- section --->
+
+        <div class="pusher" style="margin-left: 250px; margin-right: 20px; width:800px;  " >
+            <div class="main-content" >
+                <h1 ><i class="ui icon user write"></i> S'inscrire à une formation</h1>
+                    <div class="ui segment">
+                        <% if (locals.flash && locals.flash.error) { %>
+                            <div class="ui mini red message mt-3">
+                                <i class="close icon"></i>
+                                <div class="header"><h3 style="text-align: center;">Alerte !</h3></div>
+                                <div class="list">
+                                    <h5 style="text-align: center;"><%= flash.error %></h5>
+                                </div>
+                            </div>
+                        <% } %>
+                        <form action="/enregistrer" method="post" class="ui form">
+                            <div class="field" style="margin-top:15px ;">
+                                
+                                <label style="color: rgb(183, 222, 183); font-size:20px;">Cin :</label>
+                                <input type="text" name="num" placeholder="Entrez votre numéro Cin ou Carte d'identité scolaire (obligatoire)" required>
+                            </div>
+                            <div class="field">
+                                <label style="color:rgb(183, 222, 183); font-size:20px;">Nom :</label>
+                                <input style=" text-transform:uppercase;" type="text" name="nom" placeholder="Entrez votre nom (obligatoire)" required>
+                            </div>
+                            <div class="field">
+                                <label style="color:rgb(183, 222, 183); font-size:20px;">Prenom:</label>
+                                <input type="text" name="prenom" placeholder="Entrez votre prénom (facultatif)">
+                            </div>
+                            <div class="field">
+                                <label style="color:rgb(183, 222, 183); font-size:20px;">Adresse :</label>
+                                <input type="text" name="adresse" placeholder="Entrez votre adresse (obligatoire)" required>
+                            </div>
+                            
+                            <div class="field">
+                                <label style="color:rgb(183, 222, 183); font-size:20px;">Formation :</label>
+                                <div class="ui selection dropdown">
+                                    <input type="hidden" name="formation">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Choisir une Formation</div>
+                                    <div class="menu">
+                                        
+                                        <div class="item" data-value="Informatique bureautique">Informatique bureautique</div>
+                                        <div class="item" data-value="Cours de Langue">Cours de Langue</div>
+                                        <div class="item" data-value="Informatique avancée">Informatique avancée</div>
+                                        <div class="item" data-value="Apprentisage du métier">Apprentisage du métier</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label style="color: rgb(183, 222, 183); font-size:20px;">Email :</label>
+                                <input type="email" name="email" placeholder="Entrez votre email (facultatif)">
+                            </div>
+                            <div class="field">
+                                <label style="color: rgb(183, 222, 183); font-size:20px;">Contact :</label>
+                                <input type="text" name="contact" placeholder="Entrez votre numéro téléphone (obligatoire)" required>
+                            </div>
+                            
+                            
+                            <button class="ui button blue" type="submit"><i class="ui icon send"></i> Envoyer</button>
+
+
+                            
+                            <a  style="margin-bottom: 15px;" href="http://localhost/site/stage/cours.html#bureautique" class="ui button orange" type="submit"><i class="ui icon close"></i> Annuler</a>
+                        </form>
+                    </div>              
+            </div>
+        </div>
+
+        <!--- section --->
+
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/semantic/semantic.js"></script>
+        <script src="/assets/script.js"></script>
+
+        <script>
+            $(document).ready( function(){
+                $('.close').click(function(){
+                    $('.message').hide('slow');
+                });
+            });
+        </script>
+
+    </body>
+</html>

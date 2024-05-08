@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Freehand&family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Freehand&family=Stick+No+Bills:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/fontawesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Maven+Pro:900|Overpass" rel="stylesheet">
+  <title>ONG ODEFI</title>
+  
+</head>
+<style>
+body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:whitesmoke ;
+  position: relative;
+}
+
+
+button {
+  width: 150px;
+  background: rgb(183, 222, 183);
+  color: white;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+}
+
+button:hover {
+  background:rgb(183, 222, 183);
+}
+
+.form {
+  width: 500px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(183, 222, 183);
+  font-family: 'Times New Roman', Times, serif;
+  overflow: hidden;
+  width: 800px;
+  height: 500px;
+ 
+}
+
+.form__header {
+  font-family: 'Maven Pro', sans-serif;
+  background: rgb(183, 222, 183);
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+ 
+}
+
+.form__field__error {
+  color: #ff4d4d;
+  margin: .25rem 0;
+  font-size: .8rem;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  max-height: 0;
+  opacity: 0;
+}
+
+.form__button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form__content {
+  padding: 2rem;
+}
+
+.form__field {
+  position: relative;
+  margin: 0 0 1rem;
+  width: 100%;
+}
+
+.form__field__label {
+  position: absolute;
+  z-index: 0;
+  top: .35rem;
+  transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.form__field__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(183, 222, 183);
+  background-color: transparent;
+  padding: .5rem 0;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.form__field__state-icon {
+  position: absolute;
+  width: 1.5rem;
+  height: 30px;
+  right: .5rem;
+  top: .25rem;
+  background-repeat: no-repeat;
+}
+
+.form__field__input:invalid {
+  border-bottom: 1px solid #ff4d4d;
+}
+
+.form__field__input:placeholder-shown {
+  border-bottom: 1px solid rgb(183, 222, 183);
+}
+
+.form__field__input:-ms-input-placeholder {
+  border-bottom: 1px solid rgb(183, 222, 183);
+}
+
+.form__field__input:focus {
+  outline: none;
+}
+
+.form__field__input:valid ~ .form__field__state-icon {
+  background-image: url(https://bedekodzic.pl/wp-content/uploads/2019/05/success.svg);
+}
+
+.form__field__input:invalid ~ .form__field__state-icon {
+  background-image: url(https://bedekodzic.pl/wp-content/uploads/2019/05/error.svg);
+}
+.form__field__input:placeholder-shown ~ .form__field__state-icon {
+  background-image: url();
+}
+
+.form__field__input:-ms-input-placeholder ~ .form__field__state-icon {
+  background-image: url();
+}
+
+.form__field__input:invalid ~ .form__field__error {
+  max-height: 40px;
+  opacity: 1;
+}
+.form__field__input:placeholder-shown ~ .form__field__error {
+  max-height: 0;
+  opacity: 0;
+}
+
+.form__field__input:-ms-input-placeholder ~ .form__field__error {
+  max-height: 0;
+  opacity: 0;
+}
+
+.form__field__input:focus + .form__field__label,
+.form__field__input:valid + .form__field__label,
+.form__field__input:invalid + .form__field__label {
+  top: -.5rem;
+  font-size: .6rem;
+}
+
+.form__field__input:placeholder-shown + .form__field__label {
+  top: .35rem;
+  font-size: 1rem;
+}
+
+.form__field__input:-ms-input-placeholder + .form__field__label {
+  top: .35rem;
+  font-size: 1rem;
+}
+
+</style>
+<body>
+    <form action="/enregistrer" method="post" class="ui form">
+    <h1 class="form__header"><i class="fa fa-pencil"></i> Ecrire un message ...</h1>
+    <div class="form__content">
+        <div class="form__field">
+            <input type="number" class="form__field__input" name="num" placeholder="CONTACT"  required>
+            <label for="" class="form__field__label"></label>
+            <p class="form__field__error"></p>
+            <div class="form__field__state-icon"></div>
+          </div>
+      <div class="form__field">
+        <input style=" text-transform:uppercase;" type="text" class="form__field__input" name="nom" placeholder=" Nom" pattern="[A-Za-z]{2,99}" required>
+        <label for="" class="form__field__label"></label>
+        <p class="form__field__error"><i class="fa fa-exclamation-triangle"></i>Le nom doit au moins contenir 2 lettres et pas d'espaces </p>
+        <div class="form__field__state-icon"></div>
+      </div>
+      <div class="form__field">
+        <input type="email" pattern="[a-zA-Z0-9-]{3,}@[a-zA-Z0-9-]{3,}[.]{1}[a-zA-Z]{2,}" class="form__field__input" name="email" placeholder="E-MAIL " required>
+        <label for="" class="form__field__label"></label>
+        <p class="form__field__error"><i class="fa fa-exclamation-triangle"></i>Verifier bien votre email?</p>
+        <div class="form__field__state-icon"></div>
+      </div>
+      <div class="form__field">
+        <input type="text" class="form__field__input" placeholder="Sujet " pattern="[A-Za-z]{2,99}"  name="adresse" required>
+        <label for="" class="form__field__label"></label>
+        <p class="form__field__error"><i class="fa fa-exclamation-triangle"></i>Le sujet doit au moins contenir 2 lettres </p>
+        <div class="form__field__state-icon"></div>
+      </div>
+      <div class="form__field">
+        <textarea class="form__field__input" name="prenom" id="" cols="" rows="" placeholder="MESSAGE " required ></textarea>
+     
+        <label for="" class="form__field__label"></label>
+        <p class="form__field__error">Is your Last Name correct?</p>
+        <div class="form__field__state-icon"></div>
+      </div>
+      
+      <div class="form__button">
+        <button type="submit"><i class="fa fa-paper-plane"></i> Envoyer</button>
+        
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

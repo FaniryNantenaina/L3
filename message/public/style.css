@@ -1,0 +1,14 @@
+
+
+@media (min-width: 768px) {
+    .ui.vertical.menu.sidebar-menu{
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+    }
+    .main-content {
+        margin-left: 15rem;
+    }
+    .siderbar-menu-togglar{
+        display: none !important;
+    }
+}
